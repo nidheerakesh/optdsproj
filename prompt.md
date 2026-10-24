@@ -13,3 +13,5 @@
 - Save every plot as a PNG in the same results folder.
 - For each part of the PDF, state which question or section it answers and what it produced.
 - After running the code, report what was actually run and the output. If something cannot be run, say so.
+- Whenever code is updated, the report must also be updated to match the code, its results, and its figures.
+- Leave author names as placeholders (for example, `[Author 1 Name]`) in the report.
