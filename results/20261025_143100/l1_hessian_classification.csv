@@ -1,0 +1,12 @@
+example,point,eig_min,eig_max,class
+3x1^2+5x2^2 (PD example),[1, 1],6,10,positive definite (strictly convex)
+6x1^2 (PSD example, slide H=diag(6,0)),[1, 1],0,12,positive semi-definite (convex)
+-x1^2-x2^2 (ND example),[1, 1],-2,-2,negative definite (strictly concave)
+-(x1+x2)^2 (NSD example),[1, 1],-4,0,negative semi-definite (concave)
+x1^2-x2^2 (indefinite example),[1, 1],-2,2,indefinite (saddle)
+2x^2+3xy+y^2 (quadratic form example),[1, 1],-0.162278,6.16228,indefinite (saddle)
+5x1^2+3x2^2 (convexity example),[1, 1],6,10,positive definite (strictly convex)
+3x^2+2xy+y^2 (gradient example),[2, 3],1.17157,6.82843,positive definite (strictly convex)
+x^3-3xy^2 at (1,1),[1, 1],-8.48528,8.48528,indefinite (saddle)
+x^3-3xy^2 at (0,1),[0, 1],-6,6,indefinite (saddle)
+x^3-3xy^2 at (0,0),[0, 0],0,-0,zero matrix (PSD and NSD)

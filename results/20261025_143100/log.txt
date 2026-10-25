@@ -1,0 +1,230 @@
+seed=42
+seed=42 (cfg.SEED), gradient FD step=1e-06, Hessian FD step=0.0001
+norm: x=[1.0, 2.0], y=[4.0, 6.0], L1 distance=7, L2 distance=5 (slide: 7 and 5)
+norm: a=[3.0, -4.0, -6.0], ||a||_1=13 (slide: 13), ||a||_2=7.81025 (sqrt(61))
+unit vector of [3.0, 4.0] = [0.6, 0.8] (slide: (0.6, 0.8))
+dot([2.0, 3.0, 4.0], [4.0, 1.0, 2.0]) = 19, cosine similarity = 0.769919, angle = 39.65 deg
+dot([2.0, 3.0, 4.0], [2.0, 4.0, 2.0]) = 24, cosine similarity = 0.909718, angle = 24.53 deg
+dot([1.0, 2.0, -3.0], [-2.0, 1.0, 2.0]) = -6, cosine similarity = -0.534522, angle = 122.3 deg
+dot([1.0, 2.0, 0.0], [-2.0, 1.0, 1.0]) = 0, cosine similarity = 0, angle = 90 deg
+f=ax+b, a=2, b=1 at x=3: f=7
+f=ax^2+bx, a=1, b=-2 at x=3: f=3, FD f'=4 (analytic 2ax+b = 4)
+f=max(0,x): f(-1)=0, f(2)=2, right derivative at 2 = 1
+grad f=3x^2+2xy+y^2 at [2.0, 3.0]: analytic=[18, 10], FD=[18, 10]
+grad f=3x^2+2xy+y^2 at [3.0, 1.0]: analytic=[20, 8], FD=[20, 8]
+f=x^2+y^2 at [1.0, 2.0]: grad=[2, 4], unit d=[0.6, 0.8]
+directional derivative analytic grad.u = 4.4 (slide: 4.4), FD = 4.4
+sweep over 720 directions: max directional derivative 4.47213 at angle 1.10828 rad; grad direction angle 1.10715 rad, |grad|=4.47214
+descent check: grad.(-grad) = -20 < 0, so -grad is a descent direction
+3x1^2+5x2^2 (PD example) at [1.0, 1.0]: H=[6, 0][0, 10], FD-vs-analytic max err=3.65e-08, eig=[6, 10], positive definite (strictly convex)
+6x1^2 (PSD example, slide H=diag(6,0)) at [1.0, 1.0]: H=[12, 0][0, 0], FD-vs-analytic max err=1.59e-08, eig=[0, 12], positive semi-definite (convex)
+-x1^2-x2^2 (ND example) at [1.0, 1.0]: H=[-2, 0][0, -2], FD-vs-analytic max err=1.22e-08, eig=[-2, -2], negative definite (strictly concave)
+-(x1+x2)^2 (NSD example) at [1.0, 1.0]: H=[-2, -2][-2, -2], FD-vs-analytic max err=1.01e-07, eig=[-4, 0], negative semi-definite (concave)
+x1^2-x2^2 (indefinite example) at [1.0, 1.0]: H=[2, 0][0, -2], FD-vs-analytic max err=1.05e-09, eig=[-2, 2], indefinite (saddle)
+  Q(x)=x^T H x at x=[1.0, 1.0] = 0
+  Q(x)=x^T H x at x=[1.0, -1.0] = 0
+2x^2+3xy+y^2 (quadratic form example) at [1.0, 1.0]: H=[4, 3][3, 2], FD-vs-analytic max err=2.43e-08, eig=[-0.162278, 6.16228], indefinite (saddle)
+  Q(x)=x^T H x at x=[1.0, 1.0] = 12
+  Q(x)=x^T H x at x=[1.0, -1.0] = 0
+5x1^2+3x2^2 (convexity example) at [1.0, 1.0]: H=[10, 0][0, 6], FD-vs-analytic max err=3.65e-08, eig=[6, 10], positive definite (strictly convex)
+  Q(x)=x^T H x at x=[1.0, 1.0] = 16
+  Q(x)=x^T H x at x=[1.0, -1.0] = 16
+3x^2+2xy+y^2 (gradient example) at [2.0, 3.0]: H=[6, 2][2, 2], FD-vs-analytic max err=4.96e-07, eig=[1.17157, 6.82843], positive definite (strictly convex)
+x^3-3xy^2 at (1,1) at [1.0, 1.0]: H=[6, -6][-6, -6], FD-vs-analytic max err=7.94e-09, eig=[-8.48528, 8.48528], indefinite (saddle)
+x^3-3xy^2 at (0,1) at [0.0, 1.0]: H=[0, -6][-6, -0], FD-vs-analytic max err=3.11e-12, eig=[-6, 6], indefinite (saddle)
+x^3-3xy^2 at (0,0) at [0.0, 0.0]: H=[0, -0][-0, -0], FD-vs-analytic max err=0.00e+00, eig=[0, -0], zero matrix (PSD and NSD)
+Taylor sin(x) order 1 at x=1.0: 1.00000000, error=1.585e-01 (sin=0.84147098)
+Taylor sin(x) order 3 at x=1.0: 0.83333333, error=8.138e-03 (sin=0.84147098)
+Taylor sin(x) order 5 at x=1.0: 0.84166667, error=1.957e-04 (sin=0.84147098)
+f=x^3-3xy^2 at p=(1,1): f=-2, grad=[0, -6], H=[6, -6][-6, -6], d=(1,0)
+  alpha=0.1: exact=-1.96900000, 1st-order err=3.100e-02, 2nd-order err=1.000e-03
+  alpha=0.05: exact=-1.99237500, 1st-order err=7.625e-03, 2nd-order err=1.250e-04
+  alpha=0.025: exact=-1.99810938, 1st-order err=1.891e-03, 2nd-order err=1.562e-05
+  alpha=0.0125: exact=-1.99952930, 1st-order err=4.707e-04, 2nd-order err=1.953e-06
+  slope step 1: 1st-order log-ratio=2.023 (expect ~2), 2nd-order log-ratio=3.000 (expect ~3)
+  slope step 2: 1st-order log-ratio=2.012 (expect ~2), 2nd-order log-ratio=3.000 (expect ~3)
+  slope step 3: 1st-order log-ratio=2.006 (expect ~2), 2nd-order log-ratio=3.000 (expect ~3)
+FONC: grad f=0 for f=2x^2+3y^2+xy gives x*=[0, 0], f(x*)=0, eig(H)=[3.58579, 6.41421], positive definite (strictly convex)
+constrained: g1(0,0)=-1, g2(0,0)=-0, feasible=True
+constrained grid search over [-2.0,2.0]^2 step 0.02: best feasible f=0 at [0, 0]
+constrained: (1,1) feasible? False (g1=1 > 0)
+knapsack x=[0.0, 0.0, 0.0] weight=0 value=0 feasible=True
+knapsack x=[0.0, 0.0, 1.0] weight=30 value=120 feasible=True
+knapsack x=[0.0, 1.0, 0.0] weight=20 value=100 feasible=True
+knapsack x=[0.0, 1.0, 1.0] weight=50 value=220 feasible=True
+knapsack x=[1.0, 0.0, 0.0] weight=10 value=60 feasible=True
+knapsack x=[1.0, 0.0, 1.0] weight=40 value=180 feasible=True
+knapsack x=[1.0, 1.0, 0.0] weight=30 value=160 feasible=True
+knapsack x=[1.0, 1.0, 1.0] weight=60 value=280 feasible=False
+knapsack optimum (brute force): x=[0.0, 1.0, 1.0], value=220, weight=50
+peaks grid min over [-3.0,3.0]^2 (step 0.05): f=-6.539239 at [0.25, -1.6]
+peaks with slide's literal sign -(x1^2-x2^2): grid min f=-1.969049e+07 at [0, -3] (no finite minimum, unbounded below; see report)
+start [-2, -2]: not converged after 20000 iters, |grad|=4.48e-04 (flat region), skipped
+start [2, 2]: not converged after 20000 iters, |grad|=3.78e-04 (flat region), skipped
+stationary point x=[-1.3474, 0.204519] f=-3.049849 iters=2327 |grad|=9.98e-08 eig(H)=[8.55175, 15.5714] positive definite (strictly convex); local-min ball test (delta=0.3, 500 samples)=True
+stationary point x=[0.228279, -1.62553] f=-6.551133 iters=86 |grad|=8.96e-08 eig(H)=[17.9197, 30.1822] positive definite (strictly convex); local-min ball test (delta=0.3, 500 samples)=True
+stationary point x=[0.296446, 0.320196] f=-0.064936 iters=130 |grad|=9.14e-08 eig(H)=[6.33093, 15.7982] positive definite (strictly convex); local-min ball test (delta=0.3, 500 samples)=True
+seed=42
+quad a=1 b=1 alpha=0.5 iters=23 final_x=[4.76837158203125e-07, 3.5762786865234375e-07] final_f=1.776e-13
+quad a=10 b=1 alpha=0.18 iters=79 final_x=[-8.834235323891895e-08, 4.660318439424069e-07] final_f=1.476e-13
+quad a=100 b=1 alpha=0.019 iters=778 final_x=[1.0063112667643555e-35, 9.899402812746281e-07] final_f=4.900e-13
+4x1^2+x2^2-2x1x2 GD fixed alpha=0.1: iters=104 final_x=[1.9249018660463995e-07, 6.357518988202903e-07] final_f=3.076e-13
+4x1^2+x2^2-2x1x2 GD exact line search: iters=19 final_x=[6.234519926954457e-08, 2.360211248225935e-07] final_f=4.182e-14
+4x1^2+x2^2-2x1x2 GD Armijo backtracking: iters=39 final_x=[5.467504232970019e-08, 4.36825645573231e-07] final_f=1.550e-13
+Rosenbrock GD fixed alpha=0.001: hit max_it iters=10000 final_x=[0.992355840411716, 0.9847393841944715] final_f=5.853e-05
+Rosenbrock GD Armijo: hit max_it iters=10000 final_x=[1.0000205235729362, 1.0000411714687516] final_f=4.228e-10
+a=100 GD: converged iters=778 final_x=[1.0063112667643555e-35, 9.899402812746281e-07] final_f=4.900e-13
+a=100 Momentum: converged iters=375 final_x=[9.991984827875669e-09, 2.302647523859121e-09] final_f=4.995e-15
+a=100 Nesterov: diverged iters=155 final_x=[-1.3942951868446528e+50, 0.00017316456226581305] final_f=9.720e+101
+seed=42
+Worked example augmented X=[[1.0, 1.0, 2.0], [1.0, 3.0, 4.0]] w0=[1.0, 0.5, 0.5] Y=[5.0, 7.0] alpha=0.01
+Initial loss=3.125000
+GD iter 1: pred=[2.5, 4.5] E=[-2.5, -2.5] loss=3.125000 grad=[-2.5, -5.0, -7.5]
+GD iter 1: w_new=[1.025, 0.55, 0.575]
+GD iter 2: pred=[2.7249999999999996, 4.975] E=[-2.2750000000000004, -2.0250000000000004] loss=2.319063 grad=[-2.1500000000000004, -4.175000000000001, -6.325000000000001]
+GD iter 2: w_new=[1.0465, 0.59175, 0.63825]
+SGD pick row 0: pred=2.5 E=-2.5 grad=[-2.5, -2.5, -5.0] loss=3.125000 w_new=[1.025, 0.525, 0.55]
+SGD pick row 1: pred=4.800000000000001 E=-2.1999999999999993 grad=[-2.1999999999999993, -6.599999999999998, -8.799999999999997] loss=2.420000 w_new=[1.047, 0.591, 0.638]
+Synthetic N=200 d=3 true_w (weights, excl. bias 0.5)=[0.557707193831535, -1.8999569791093323, -0.899882726523523]
+Seed 42: data generation; re-seeded before SGD; mini-batch continues that stream
+GD final loss=0.005657 w=[0.4974878181288387, 0.5642798801085482, -1.8978559259309675, -0.8960052666474344]
+SGD final loss=0.005705 w=[0.49551944389726216, 0.5757957446156093, -1.9093068352035463, -0.8895132197918064]
+MiniBatch(16) final loss=0.005685 w=[0.49221077147793285, 0.5590370801481382, -1.9014379759608149, -0.9030010588090588]
+Normal equation (bias first) w=[0.49748449308290865, 0.5642967275640471, -1.897910273300315, -0.8960328505467094] loss=0.005657 true_w (excl. bias)=[0.557707193831535, -1.8999569791093323, -0.899882726523523]
+seed=42
+Logistic worked example X=[[1.0, 2.0], [3.0, 4.0]] Y=[0.0, 1.0] w0=[0.5, 0.5] b0=1.0 alpha=0.01
+GD iter 1: P=[0.9241418199787566, 0.9890130573694068] E=[0.9241418199787566, -0.010986942630593188] loss=1.294969 gw=[0.4455904960434885, 0.9021679347175702] gb=0.4565774386740817
+GD iter 1: w=[0.4955440950395651, 0.4909783206528243] b=0.9954342256132592
+GD iter 2: P=[0.9222225452301496, 0.988410284776186] E=[0.9222225452301496, -0.011589715223814023] loss=1.282781 gw=[0.44372669977935375, 0.8990431147825215] gb=0.4553164150031678
+GD iter 2: w=[0.4911068280417715, 0.4819878895049991] b=0.9908810614632275
+SGD pick row 0: p=0.924142 e=0.924142 loss=1.294969 w=[0.4907585818002124, 0.48151716360042485] b=0.990759
+SGD pick row 1: p=0.987740 e=-0.012260 loss=1.270046 w=[0.4911263725702383, 0.48200755129379264] b=0.990881
+Adagrad worked example X=[[1.0, 0.2], [3.0, 0.01]] Y=[0.0, 1.0] w0=[0.5, 0.5] b0=1.0 alpha=0.01 eps=1e-08
+Adagrad iter 1: gw=[0.3027465866561595, 0.08282429649368978] gb=0.37825499 G=[0.0916554957319555, 0.0068598640896746325] Gb=0.14307684 w=[0.49000000054552095, 0.4900000072887662] b=0.99000000
+Adagrad iter 2: gw=[0.29692692232603024, 0.08250032957125931] gb=0.37528267 G=[0.1798210929339639, 0.013666168469041036] Gb=0.28391392 w=[0.48299788539891214, 0.48294281193553096] b=0.98295688
+GD alpha=0.5: final loss=0.571721 w=[0.5658163858294829, -2.1849221375138694, -0.7501475617912311, -0.15368793877098363, 1.3458286460638524, 0.8074549869121561] b=0.459137
+Adagrad alpha=0.5: final loss=0.570896 w=[0.6093164182388648, -2.5977372223315465, -0.7819545582613254, -0.16850382500398295, 1.4475262500639392, 0.8370506790661442] b=0.467652
+RMSProp alpha=0.01: final loss=0.570901 w=[0.6129166663513724, -2.5847861848367453, -0.7860927582957796, -0.1640257792063713, 1.4502679368500524, 0.8322976230026994] b=0.462556
+Adam alpha=0.01: final loss=0.573895 w=[0.5628896914582588, -1.8143279304741984, -0.7479588599309196, -0.15925683740089538, 1.3643222917892541, 0.8005579624694138] b=0.455913
+seed=42
+EWMA demo t=60 seed=42
+beta=0.1: first weights=[0.1, 0.09, 0.081, 0.0729] sum_60=0.998203
+beta=0.3: first weights=[0.3, 0.21, 0.147, 0.1029] sum_60=1.000000
+beta=0.9: first weights=[0.9, 0.09, 0.009, 0.0009] sum_60=1.000000
+Adam example f=x1^2+2x2^2 x0=[1.0, -1.0] alpha=0.01 b1=0.9 b2=0.99 eps=1e-8, 2 iterations
+Adam f-example iter 1: grad=[2.0, -4.0] M=[0.19999999999999996, -0.3999999999999999] G=[0.040000000000000036, 0.16000000000000014] Mhat=[2.0, -4.0] Ghat=[4.0, 16.0] x=[0.99000000005, -0.990000000025] f=2.94030000
+Adam f-example iter 2: grad=[1.9800000001, -3.9600000001] M=[0.3780000000099999, -0.7560000000099998] G=[0.07880400000396007, 0.31521600000792027] Mhat=[1.989473684263158, -3.9789473684736842] Ghat=[3.960000000198993, 15.84000000039798] x=[0.9800025186747527, -0.9800025186246397] f=2.88121481
+Adam linreg example X=[[1.0, 2.0], [2.0, 5.0]] Y=[3.0, 7.0] w0=[0,0] b0=1 alpha=0.01 b1=0.9 b2=0.99 eps=1e-8, 2 iterations
+Adam linreg iter 1: loss=10.000000 gw=[-7.0, -17.0] gb=-4.000000 w=[0.009999999985714287, 0.009999999994117647] b=1.010000
+Adam linreg iter 2: loss=9.722000 gw=[-6.900000000108508, -16.760000000258508] gb=-3.940000 w=[0.019996316223541796, 0.019996362915957105] b=1.019996
+f=x1^2+2x2^2 after 300 iters: Adam f=1.197e-13 x=[-1.9973434299171997e-07, 1.9973436948553672e-07]; GD f=7.145e-59 x=[8.452712498170662e-30, -2.788528676959807e-67]
+RMSProp example f=x1^2+2x2^2 x0=[1.0, -1.0] alpha=0.01 beta=0.9 eps=1e-8, 2 iterations (slide gives no numbers for RMSProp)
+RMSProp f-example iter 1: grad=[2.0, -4.0] G=[0.3999999999999999, 1.5999999999999996] x=[0.9683772238983162, -0.9683772236483162] f=2.81326334
+RMSProp f-example iter 2: grad=[1.9367544477966323, -3.873508894593265] G=[0.7351017791060037, 2.940407115649313] x=[0.9457880254881013, -0.9457880251092234] f=2.68354497
+RMSProp f=x1^2+2x2^2 after 300 iters alpha=0.05 beta=0.9: f=1.875e-03 x=[0.02500232542089672, -0.02500232792002874]; Adam same alpha: f=1.197e-13 x=[-1.9973434299171997e-07, 1.9973436948553672e-07]
+seed=42
+f(x)=|x| at x=0: subgradient 0.5 supports the graph (f(z) >= 0.5 z for all z)
+  inequality holds on grid = True
+Hinge f(x)=max(0,1-x): subdifferential at x=1 should be [-1,0]
+  g=-1.0: subgradient inequality holds on grid = True
+  g=-0.5: subgradient inequality holds on grid = True
+  g=0.0: subgradient inequality holds on grid = True
+  g=0.5: subgradient inequality holds on grid = False
+ReLU f(x)=max(0,x): subdifferential is {0} for x<0, {1} for x>0, [0,1] at x=0
+  x=0.0 g=-0.1: subgradient inequality holds on grid = False
+  x=0.0 g=0.0: subgradient inequality holds on grid = True
+  x=0.0 g=0.5: subgradient inequality holds on grid = True
+  x=0.0 g=1.0: subgradient inequality holds on grid = True
+  x=0.0 g=1.5: subgradient inequality holds on grid = False
+  x=-1.0 g=0.0: subgradient inequality holds on grid = True
+  x=-1.0 g=0.1: subgradient inequality holds on grid = False
+  x=2.0 g=1.0: subgradient inequality holds on grid = True
+  x=2.0 g=0.5: subgradient inequality holds on grid = False
+f=|x1|+2|x2| subgradient method from [3.0, -2.0]: best_x=[-0.02476597952696613, -0.005872169235791924] best_f=0.036510
+Note: the slide writes x1+2|x2| but its subgradient cases use |x1|, so the code minimizes |x1|+2|x2| (bounded below, minimum at 0)
+Lasso synthetic N=150 d=8 true_w=[3.0, -2.0, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0] seed=42
+lambda=0.01: best loss=0.069188 w=[3.006, -1.989, -0.0, -0.0, 1.492, 0.0, 0.0, -0.0] |w|<1e-2 count=5
+lambda=0.1: best loss=0.640626 w=[2.911, -1.891, 0.0, 0.0, 1.409, -0.0, -0.0, -0.0] |w|<1e-2 count=5
+lambda=0.5: best loss=2.880352 w=[2.488, -1.455, -0.0, -0.0, 1.041, -0.0, 0.0, -0.0] |w|<1e-2 count=5
+Hinge SVM subgradient: best objective=0.183146 w=[2.1383, 2.1788] b=-0.0850
+Hinge SVM training accuracy=1.000
+seed=42
+Example 1: f=x^2+2xy+3y^2-6x-12y, Newton from (0,0): x1=[1.5, 1.5] f(x1)=-13.500000
+Example 2: f=x^2+2xy+y^2 singular H, damped lambda=1 from (1,0): x1=[0.6000000000000001, -0.4] f(x1)=0.040000
+Conditioning: cond(diag(1,0.001))=1000.00; cond(H+0.1I)=10.89
+1D Newton root f=x^2-2 from x0=1: iters=4 root=1.4142135623746899 f=4.511e-12 iterates=[1.0, 1.5, 1.4166666666666667, 1.4142156862745099, 1.4142135623746899]
+1D Newton optimum f=x^4-3x^3+2 from x0=3: iters=5 x*=2.250000000003196 f(x*)=-6.542969 iterates=[3.0, 2.5, 2.2916666666666665, 2.251461988304094, 2.2500018962234813, 2.250000000003196]
+Newton (lambda=0) on Rosenbrock from [-1.2, 1.0]: iters=6 final_x=[0.9999999999999999, 0.9999999999814724] f=3.433e-20
+Damped Newton (lambda=1) on Rosenbrock from [-1.2, 1.0]: iters=46 final_x=[0.9999989884827103, 0.9999979729185929] f=1.025e-12
+GD fixed alpha=0.001 on Rosenbrock: iters=10000 final_f=5.853e-05
+seed=42
+Worked BFGS: H0=I delta=[1.0, 1.0] y=[2.0, 3.0] y.delta=5.0 rho=0.200000 updated=True
+  H1=[[0.92, -0.28], [-0.28, 0.52]] expected [[0.92, -0.28], [-0.28, 0.52]]
+  secant check H1*y=[1.0000000000000004, 1.0] delta=[1.0, 1.0]
+  p=-H1 g=[-1.0000000000000004, -1.0] x_next=[0.9999999999999996, 0.0] expected p=(-1,-1), x_next=(1,0)
+Slide 37 BFGS: H0=I delta=[1.0, 2.0] y=[2.0, 3.0] y.delta=8.0 rho=0.125000 updated=True
+  H1=[[0.828125, -0.21875], [-0.21875, 0.8125]] expected [[0.828125, -0.21875], [-0.21875, 0.8125]]
+  secant check H1*y=[1.0, 2.0] delta=[1.0, 2.0]
+Secant pair (i): delta=[1.0, 1.0] y=[2.0, 1.0] y.delta=3.0 decision=perform rho=0.3333333333333333
+Secant pair (ii): delta=[1.0, 0.0] y=[0.0, 2.0] y.delta=0.0 decision=skip rho=None
+Secant pair (iii): delta=[1.0, 0.0] y=[-1.0, 2.0] y.delta=-1.0 decision=skip rho=None
+Secant pair final: delta=[1.0, 2.0] y=[2.0, 3.0] y.delta=8.0 decision=perform rho=0.125
+BFGS on Rosenbrock from [-1.2, 1.0]: iters=36 skipped_updates=1 final_x=[0.9999999985040003, 0.9999999969231423] f=2.958e-18
+GD Armijo on Rosenbrock: iters=10000 final_f=4.228e-10
+BFGS on a=100 quadratic from [4.0, 3.0]: iters=3 final_f=3.544e-20
+seed=42
+L8A settings: {'starts': 200, 'box': 3.0, 'tol': 1e-10, 'max_it': 50, 'close': 1e-06, 'match': 1e-05, 'newton_start': [1.0, 0.5, 1.0]}
+A f=xy h=x^2/8+y^2/2-1: converged starts=200/200, distinct Lagrange points=4
+  x=(-2.000000, -1.000000) lam=(-2.000000) f=2.000000 kkt_residual=5.0e-16
+  x=(-2.000000, 1.000000) lam=(2.000000) f=-2.000000 kkt_residual=0.0e+00
+  x=(2.000000, -1.000000) lam=(2.000000) f=-2.000000 kkt_residual=4.3e-12
+  x=(2.000000, 1.000000) lam=(-2.000000) f=2.000000 kkt_residual=1.8e-15
+  slide values (x, lam): [([2, 1], None), ([-2, -1], None), ([2, -1], None), ([-2, 1], None)]
+  matches slide: True
+B f=x1+x2 h=x1^2+x2^2-2: converged starts=199/200, distinct Lagrange points=2
+  x=(1.000000, 1.000000) lam=(-0.500000) f=2.000000 kkt_residual=1.1e-14
+  x=(-1.000000, -1.000000) lam=(0.500000) f=-2.000000 kkt_residual=5.1e-15
+  slide values (x, lam): [([1, 1], None), ([-1, -1], None)]
+  matches slide: True
+C two equality h=x+y-1 g=x^2+y^2-1: converged starts=199/200, distinct Lagrange points=2
+  x=(1.000000, -0.000000) lam=(-0.000000, -1.000000) f=1.000000 kkt_residual=9.9e-15
+  x=(-0.000000, 1.000000) lam=(0.000000, -1.000000) f=1.000000 kkt_residual=4.8e-16
+  slide values (x, lam): [([0, 1], [0, -1]), ([1, 0], [0, -1])]
+  matches slide: True
+D DIY f=x^2+y^2 h=y-x^2 g=y-2: converged starts=198/200, distinct Lagrange points=2
+  x=(-1.414214, 2.000000) lam=(1.000000, -5.000000) f=6.000000 kkt_residual=4.4e-16
+  x=(1.414214, 2.000000) lam=(1.000000, -5.000000) f=6.000000 kkt_residual=1.4e-14
+  slide values (x, lam): [([1.4142135623730951, 2], [1, -3]), ([-1.4142135623730951, 2], [-1, -1])]
+  matches slide: False
+Example 1 f=x^2+y^2, g=x^2+y^2-1 (lam = -1 case, analytic)
+  point=(1.000000, 0.000000) lam=-1.0 stationarity_residual=0.0e+00 f=1.000000
+  point=(0.764842, 0.644218) lam=-1.0 stationarity_residual=0.0e+00 f=1.000000
+  point=(0.000000, 1.000000) lam=-1.0 stationarity_residual=0.0e+00 f=1.000000
+  point=(-1.000000, 0.000000) lam=-1.0 stationarity_residual=0.0e+00 f=1.000000
+  for lam != -1, stationarity forces x=y=0, which violates g=0, so no other candidates
+Example 2 f=x+y, h=x^2+y^2 at (0,0): grad f=(1.000000, 1.000000) rank(J)=0 -> NO lam satisfies stationarity, min residual=1.4142
+Without CQ case 1 f=2x+3y, h=x^2+y^2 at (0,0): grad f=(2.000000, 3.000000) rank(J)=0 -> NO lam satisfies stationarity, min residual=3.6056
+Without CQ case 2 f=x^2, h=y^2 at (0,0): grad f=(0.000000, 0.000000) rank(J)=0 -> stationarity holds for ANY lam (multiplier not unique)
+LICQ h1=x1-1, h2=x2-1: rank=2, active constraints=2, LICQ holds
+LICQ h1=x1+x2-1, h2=2x1+2x2-2: rank=1, active constraints=2, LICQ fails
+KKT equality check Example C at (1.000000, 0.000000) mu=(0.000000, -1.000000): stationarity, primal, dual, comp = (True, True, True, True)
+KKT equality check Example C at (0.000000, 1.000000) mu=(0.000000, -1.000000): stationarity, primal, dual, comp = (True, True, True, True)
+KKT inequality sanity (not a slide example) min x^2+y^2 s.t. 1-x-y<=0 at (0.5,0.5) lam=1: (True, True, True, True)
+KKT inequality sanity at (1,1) lam=0 (should fail stationarity): (False, True, True, True)
+Newton KKT from start [1.0, 0.5, 1.0]: ok=True iters=5 final=(2.000000, 1.000000, -2.000000)
+seed=42
+== Example 1: Hessian of f PD=True, affine constraints, convex problem=True
+  case active {}: x=(2, 1) f=0 mult[none] g=[3, -1] -> primal g1=3 > 0
+  case active {g1}: x=(1.66667, 0.333333) f=1 mult[g1=0.666667] g=[0, -1.333] -> KKT point
+  case active {g2}: x=(1.33333, 1.33333) f=0.666667 mult[g2=-1.33333] g=[3.667, -2.22e-16] -> primal g1=3.667 > 0; dual lambda_g2=-1.333 < 0
+  case active {g1, g2}: x=(0.6, 0.6) f=2.28 mult[g1=0.88, g2=-1.92] g=[4.441e-16, 0] -> dual lambda_g2=-1.92 < 0
+  KKT {g1} second order: dim(critical cone)=1 leading minors of Z^T H Z=[36.0] sufficient=True degenerate_ineq=[]
+== Example 2: Hessian of f PD=True, affine constraints, convex problem=True
+  case active {}: x=(1, -1) f=3 mult[g2=-2] g=[1] -> primal g1=1 > 0
+  case active {g1}: x=(1.5, -0.5) f=3.5 mult[g1=1, g2=-2] g=[0] -> KKT point
+  KKT {g1} second order: dim(critical cone)=0 leading minors of Z^T H Z=[] sufficient=True degenerate_ineq=[]
+== Example 3: Hessian of f PD=True, affine constraints, convex problem=True
+  case active {}: x=(2.5, 1.5) f=0.5 mult[h=1] g=[2.5] -> primal g=2.5 > 0
+  case active {g}: x=(0, 4) f=13 mult[g=10, h=-4] g=[0] -> KKT point
+  KKT {g} second order: dim(critical cone)=0 leading minors of Z^T H Z=[] sufficient=True degenerate_ineq=[]
+plot saved: /home/nidhi/Desktop/SEM5/SEM 5/Academics/Opt DS/.claude/worktrees/github-status-3e97cf/results/20261025_143100/l9_example1_feasible_region.png

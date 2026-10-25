@@ -1,0 +1,4 @@
+x,f,iters,grad_norm,hessian_class,local_min_ball_test
+[-1.3474, 0.204519],-3.049849,2327,9.98e-08,positive definite (strictly convex),True
+[0.228279, -1.62553],-6.551133,86,8.96e-08,positive definite (strictly convex),True
+[0.296446, 0.320196],-0.064936,130,9.14e-08,positive definite (strictly convex),True

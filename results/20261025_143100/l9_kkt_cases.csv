@@ -1,0 +1,9 @@
+example,active_set,x,multipliers,status
+Example 1,{},2;1,,primal g1=3 > 0
+Example 1,{g1},1.66667;0.333333,g1=0.666667,KKT point
+Example 1,{g2},1.33333;1.33333,g2=-1.33333,primal g1=3.667 > 0; dual lambda_g2=-1.333 < 0
+Example 1,"{g1, g2}",0.6;0.6,g1=0.88;g2=-1.92,dual lambda_g2=-1.92 < 0
+Example 2,{},1;-1,g2=-2,primal g1=1 > 0
+Example 2,{g1},1.5;-0.5,g1=1;g2=-2,KKT point
+Example 3,{},2.5;1.5,h=1,primal g=2.5 > 0
+Example 3,{g},0;4,g=10;h=-4,KKT point
