@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">Optimization for Data Science, implemented from scratch</title>
+  <desc id="desc">Title and summary of the course implementation, with a bar chart comparing iterations to converge: gradient descent 778, momentum 375, BFGS 3 on the same quadratic.</desc>
+
+  <rect width="1200" height="340" rx="26" fill="#0f1419"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="56" y="70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" fill="#f2b84b" letter-spacing="2">LECTURES 1 TO 9 · PLAIN PYTHON</text>
+    <text x="56" y="140" font-size="60" font-weight="700" fill="#e6edf3">Optimization</text>
+    <text x="56" y="205" font-size="60" font-weight="700" fill="#e6edf3">for Data Science</text>
+    <text x="56" y="260" font-size="22" fill="#8b949e">Gradient descent, Adam, BFGS and KKT conditions,</text>
+    <text x="56" y="290" font-size="22" fill="#8b949e">each checked against the lecture examples.</text>
+  </g>
+
+  <rect x="720" y="56" width="424" height="228" rx="16" fill="#161c24" stroke="#2a3340"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="744" y="96" font-size="20" font-weight="600" fill="#e6edf3">Iterations to converge</text>
+    <text x="744" y="120" font-size="17" fill="#8b949e">f = 0.5(100 x1² + x2²), start (4, 3)</text>
+
+    <text x="744" y="167" font-size="18" fill="#e6edf3">GD</text>
+    <rect x="880" y="150" width="160" height="24" rx="4" fill="#8b949e"/>
+    <text x="1052" y="168" font-size="20" font-weight="600" fill="#e6edf3">778</text>
+
+    <text x="744" y="209" font-size="18" fill="#e6edf3">Momentum</text>
+    <rect x="880" y="192" width="77" height="24" rx="4" fill="#58a6ff"/>
+    <text x="969" y="210" font-size="20" font-weight="600" fill="#e6edf3">375</text>
+
+    <text x="744" y="251" font-size="18" fill="#e6edf3">BFGS</text>
+    <rect x="880" y="234" width="3" height="24" rx="1" fill="#f2b84b"/>
+    <text x="892" y="252" font-size="20" font-weight="600" fill="#f2b84b">3</text>
+  </g>
+</svg>
